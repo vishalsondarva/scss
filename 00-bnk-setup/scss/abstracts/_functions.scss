@@ -1,0 +1,65 @@
+// *** Demo *** //
+
+// @for $i from 1 through 10 {
+//     &:nth-child(#{$i}) {
+//         animation-name: fadeInFor;
+//         animation-duration: 400ms + 100ms * $i;
+//     }
+// }
+
+
+// @keyframes fadeInFor {
+//     0%, 75% {
+//         opacity: 0;
+//     }
+//     90% {
+//         opacity: 0.5;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes fadeInForUp {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(100px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: none;
+//     }
+// }
+
+// @keyframes fadeInForDown {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(-100px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: none;
+//     }
+// }
+
+// @keyframes fadeInForRight {
+//     0% {
+//         opacity: 0;
+//         transform: translateX(100px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: none;
+//     }
+// }
+
+// @keyframes fadeInForLeft {
+//     0% {
+//         opacity: 0;
+//         transform: translateX(-100px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: none;
+//     }
+// }

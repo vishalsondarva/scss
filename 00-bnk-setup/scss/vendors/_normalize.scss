@@ -1,0 +1,98 @@
+body,
+ol[class],
+ul[class] li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin: 0;
+    margin-bottom: 0.5em;
+}
+
+img,
+svg,
+video,
+.img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.row > * {
+    flex-shrink: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+$colSize: (
+    // "auto": auto,
+    "1": 8.3333333333%,
+    "2": 16.6666666667%,
+    "3": 25%,
+    "4": 33.3333333333%,
+    "5": 41.6666666667%,
+    "6": 50%,
+    "7": 58.3333333333%,
+    "8": 66.6666666667%,
+    "9": 75%,
+    "10": 83.3333333333%,
+    "11": 91.6666666667%,
+    "12": 100%,
+);
+
+@each $colSize, $value in $colSize {
+    .col-#{$colSize} {
+        // flex: 0 0 auto;
+        width: $value;
+    }
+}
+@media (max-width: 767px) {
+    @each $colSize, $value in $colSize {
+        .col-sm-#{$colSize} {
+            // flex: 0 0 auto;
+            width: $value;
+        }
+    }
+}
+@media (min-width: 768px) {
+    @each $colSize, $value in $colSize {
+        .col-md-#{$colSize} {
+            // flex: 0 0 auto;
+            width: $value;
+        }
+    }
+}
+@media (min-width: 992px) {
+    @each $colSize, $value in $colSize {
+        .col-lg-#{$colSize} {
+            // flex: 0 0 auto;
+            width: $value;
+        }
+    }
+}

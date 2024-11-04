@@ -1,0 +1,174 @@
+.btn {
+    font-family: $ft-primary;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    color: $clr-dark--800;
+    background-color: $clr-dark--200;
+    transition: color 500ms, background-color 500ms, border-color 500ms, transform 500ms, box-shadow 500ms;
+    transition-timing-function: ease-in-out;
+
+    &:not(:first-of-type) {
+        margin-bottom: 0.25em;
+        margin-right: 0.25em;
+    }
+
+    &:active {
+        outline: none;
+        opacity: 0.925;
+    }
+
+    &:hover,
+    &:focus {
+        color: #333;
+        background-color: #ddd;
+    }
+    &[disabled],
+    &.disabled {
+        filter: opacity(0.5);
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &.btn_primary {
+        background-color: $clr-primary--400;
+        color: $clr-dark--100;
+        &:hover,
+        &:focus {
+            background-color: $clr-primary--400--hover;
+        }
+    }
+
+    &.btn_secondary {
+        background-color: $clr-secondary--400;
+        color: $clr-dark--100;
+        &:hover,
+        &:focus {
+            background-color: $clr-secondary--400--hover;
+        }
+    }
+
+    &.btn_arrow {
+        border-radius: 50px;
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 140%;
+        background-color: $clr-dark--200;
+        border: solid 1px $clr-dark--300;
+        color: $clr-dark--800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        transition: border-color 400ms, background-color 400ms;
+        @include size(max-1200) {
+            width: 35px;
+            height: 35px;
+        }
+        @include size(max-767) {
+            width: 32px;
+            height: 32px;
+        }
+        &.left {
+            [class*="ico"] {
+                transform: scaleX(-1);
+            }
+        }
+        span {
+            line-height: 0;
+        }
+        &:hover,
+        &:focus {
+            background-color: $clr-secondary--400;
+            border-color: $clr-secondary--400;
+            color: $clr-dark--100;
+        }
+    }
+}
+
+.slick .slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 0rem;
+    // position: absolute;
+    bottom: 5%;
+    width: 100%;
+    li {
+        list-style: none;
+        button {
+            margin: 0 8px;
+            padding: 0;
+            display: block;
+            border-radius: 50px;
+            width: 11px;
+            height: 11px;
+            background-color: transparent;
+            border: solid 2px #6f6d6d;
+            font-size: 0px;
+            cursor: pointer;
+            outline: none;
+            transition: box-shadow 400ms, background-color 400ms, border-color 400ms, transform 400ms;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -6px;
+                left: -6px;
+                width: calc(100% + 12px);
+                height: calc(100% + 12px);
+                border-radius: 50px;
+                border: solid 2px $clr-primary--400;
+                transform: scale(0);
+                transition: transform 400ms;
+            }
+            &:hover {
+                transform: scale(1.25);
+            }
+        }
+        &.slick-active {
+            button {
+                border-color: transparent;
+                background-color: $clr-primary--400;
+                // box-shadow: 0 0 0 1px #fff, 0 0 0 3px $clr-primary--400;
+                &::before {
+                    transform: none;
+                }
+            }
+        }
+    }
+}
+
+.btn_arrow_center {
+    .btn_arrow {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+        z-index: 9;
+        &.right {
+            right: unset;
+            left: 100%;
+        }
+        @include size(max-1560) {
+            left: -0.5rem;
+            &.right {
+                left: unset;
+                right: -0.5em;
+            }
+        }
+    }
+}
